@@ -16,7 +16,7 @@ bool BlockPan::init()
 	{
 		return false;
 	}
-	setContentSize(CCSizeMake(BLOCK_PAN_SIZE_W*BLOCK_SIZE_W,BLOCK_PAN_SIZE_H*BLOCK_SIZE_H));
+	setContentSize(CCSizeMake(BLOCK_PAN_SIZE_W*BLOCK_SIZE_W-5*BLOCK_PAN_SIZE_W,BLOCK_PAN_SIZE_H*BLOCK_SIZE_H-5*BLOCK_PAN_SIZE_H));
 	mPanBg = createPanBg();
 	addChild(mPanBg);
 	return true;
@@ -34,7 +34,7 @@ CCLayer* BlockPan::createPanBg()
 		for (int j = 0;j<maxW;j++)
 		{
 			CCSprite* blockBg = CCSprite::create(RESOURCE_PATH_CRYSTRAL("blocktiles.png"));
-			blockBg->setPosition(ccp(i*blockW,j*blockH));
+			blockBg->setPosition(ccp(i*blockW-5*i,j*blockH-5*j));
 			blockBg->setAnchorPoint(ccp(0,0));
 			panBg->addChild(blockBg);
 		}
