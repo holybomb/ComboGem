@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
+#include "BlockPan.h"
 #define TOTAL_GAME_TIME 60
 #define THINK_TIME 3
 USING_NS_CC;
@@ -21,7 +22,7 @@ public:
 	int mFreeTime;
 	CCLayer* timeBoard;
 	CCLabelBMFont* scoreTxt;
-
+	BlockPan* mGamePan;
 
 public:
 	GameScene();

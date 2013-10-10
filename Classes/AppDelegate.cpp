@@ -11,6 +11,8 @@ AppDelegate::AppDelegate() {
 
 AppDelegate::~AppDelegate() 
 {
+	if(SimpleAudioEngine::sharedEngine()->isBackgroundMusicPlaying())
+		SimpleAudioEngine::sharedEngine()->stopBackgroundMusic(true);
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {

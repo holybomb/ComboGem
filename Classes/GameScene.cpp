@@ -41,7 +41,9 @@ bool GameScene::init()
 	CCSprite* bgSprite = CCSprite::create(RESOURCE_PATH_GAME("background.png"));
 	bgSprite->setAnchorPoint(ccp(0.0f,0.0f));
     this->addChild(bgSprite);
-
+	mGamePan = BlockPan::create();
+	this->addChild(mGamePan);
+	mGamePan->setPosition(ccp(DESIGN_SCREEN_SIZE_W/2-mGamePan->getContentSize().width/2,(DESIGN_SCREEN_SIZE_H-158)/2-mGamePan->getContentSize().height/2));
 	timeBoard = showTimerBoarder();
 	timeBoard->setPosition(ccp(0,DESIGN_SCREEN_SIZE_H+158));
 	timeBoard->runAction(CCMoveTo::create(0.3f,ccp(0,DESIGN_SCREEN_SIZE_H-158)));
